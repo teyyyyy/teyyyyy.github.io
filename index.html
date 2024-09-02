@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,58 +13,128 @@
             padding: 20px;
             line-height: 1.6;
         }
+
         h1 {
             color: #333;
+            font-size: 2.5em;
         }
+
         a {
             color: #0066cc;
             text-decoration: none;
         }
+
         a:hover {
             text-decoration: underline;
         }
+
         .container {
             background-color: white;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
+            position: relative;
         }
+
+        .bio-box {
+            background-color: #f4f4f4;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+        }
+
+        .bio-photo {
+            float: left;
+            margin-right: 20px;
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .clear {
+            clear: both;
+        }
+
         .skills, .achievements {
             list-style-type: none;
             padding: 0;
         }
+
         .skills li, .achievements li {
             margin-bottom: 8px;
         }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        h2 {
+            color: #444;
+            font-size: 1.8em;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            margin: 20px 0;
+            border: none;
+            border-radius: 8px;
+        }
     </style>
 </head>
+
 <body>
 
     <div class="container">
         <h1>Huan Yao Tey</h1>
-        <p><em>Bachelor of Science (Information Systems) Student at Singapore Management University</em></p>
-        <p><em>Currently working as Student Community Manager at SMU Institute of Innovation and Entrepreneurship</em></p>
-        
-        <h2>About Me</h2>
-        <p>I am passionate about applying technology to real-world challenges. With technical expertise in Python, C++, and HTML, I thrive on using these skills to solve problems. As a Tech Team member at Advisory SG, I analyzed user patterns and optimized data filters, enhancing the user experience and gaining valuable hands-on experience.</p>
-        
+
+        <!-- Photo and bio box -->
+        <div class="bio-box">
+            <img src="downloads/your-photo.jpg" alt="Huan Yao Tey Photo" class="bio-photo">
+            <p><em>Bachelor of Science (Information Systems) Student at Singapore Management University</em></p>
+            <p><em>Currently working as Student Community Manager at SMU Institute of Innovation and Entrepreneurship</em></p>
+            <p>I am passionate about applying technology to real-world challenges. With technical expertise in Python, C++, and HTML, I thrive on using these skills to solve problems. As a Tech Team member at Advisory SG, I analyzed user patterns and optimized data filters, enhancing the user experience and gaining valuable hands-on experience.</p>
+            <div class="clear"></div>
+        </div>
+
         <h2>Contributions</h2>
         <p>Beyond academics, I actively contribute to the tech community by hosting cybersecurity workshops and facilitating programming training sessions in JC. I enjoy helping others develop their technical abilities while continuously refining my own skill set.</p>
-        
         <p>Connect with me on <a href="https://www.linkedin.com/in/tey-huan-yao-9b6391250" target="_blank">LinkedIn</a>.</p>
-        
+
         <h2>Skills</h2>
         <ul class="skills">
             <li>Python, C++, HTML, PHP</li>
             <li>MongoDB, MySQL</li>
         </ul>
-        
+
         <h2>Notable Achievements</h2>
         <ul class="achievements">
             <li>Singapore Math Olympiad (Bronze Award)</li>
             <li>Australian Informatics Olympiad (Bronze Award)</li>
+        </ul>
+
+        <!-- Embedded YouTube video -->
+        <iframe src="https://www.youtube.com/embed/8C30rHKb5Fc?autoplay=1&mute=1" allow="autoplay; encrypted-media;" allowfullscreen></iframe>
+
+        <!-- Call to action -->
+        <button>Contact Me</button>
+    </div>
 
 </body>
+
 </html>
