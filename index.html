@@ -59,12 +59,14 @@
             clear: both;
         }
 
-        .skills, .achievements {
+        .skills,
+        .achievements {
             list-style-type: none;
             padding: 0;
         }
 
-        .skills li, .achievements li {
+        .skills li,
+        .achievements li {
             margin-bottom: 8px;
         }
 
@@ -99,13 +101,26 @@
         .korea-section p {
             font-size: 1.2em;
         }
+
+        /* Back-to-top button */
+        #back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: none;
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
     </style>
 </head>
 
 <body>
 
     <div class="container">
-        <h1>Tey Huan Yao</h1>
+        <h1 id="greeting">Tey Huan Yao</h1>
 
         <!-- Photo and bio box -->
         <div class="bio-box">
@@ -122,8 +137,8 @@
 
         <h2>Skills</h2>
         <ul class="skills">
-            <li>Python, C++, HTML, PHP</li>
-            <li>MongoDB, MySQL</li>
+            <li>Python, C++, HTML, PHP <div class="progress-bar" data-skill="90%"></div></li>
+            <li>MongoDB, MySQL <div class="progress-bar" data-skill="80%"></div></li>
         </ul>
 
         <h2>Notable Achievements</h2>
@@ -146,6 +161,55 @@
         <iframe src="https://www.youtube.com/embed/8C30rHKb5Fc?autoplay=1&mute=1" allow="autoplay; encrypted-media;" allowfullscreen></iframe>
 
     </div>
+
+    <!-- Back-to-top button -->
+    <div id="back-to-top">Back to Top</div>
+
+    <script>
+        // Smooth scroll to top
+        const backToTopButton = document.getElementById('back-to-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.style.display = 'block';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Dynamic greeting based on time of day
+        const greetingElement = document.getElementById('greeting');
+        const now = new Date();
+        const hour = now.getHours();
+        let greetingMessage;
+
+        if (hour < 12) {
+            greetingMessage = 'Good Morning, Tey Huan Yao';
+        } else if (hour < 18) {
+            greetingMessage = 'Good Afternoon, Tey Huan Yao';
+        } else {
+            greetingMessage = 'Good Evening, Tey Huan Yao';
+        }
+
+        greetingElement.innerHTML = greetingMessage;
+
+        // Progress bar for skills
+        document.querySelectorAll('.progress-bar').forEach(function (progressBar) {
+            const skillLevel = progressBar.getAttribute('data-skill');
+            progressBar.style.width = skillLevel;
+            progressBar.style.height = '10px';
+            progressBar.style.backgroundColor = '#4caf50';
+            progressBar.style.borderRadius = '5px';
+            progressBar.style.marginTop = '5px';
+        });
+    </script>
 
 </body>
 
